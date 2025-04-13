@@ -73,6 +73,6 @@ _Bool peek(Stack *stack, int *elem)
     {
         return false;
     }
-    *elem = stack->top->element;
+    *elem = stack->top->data;
     return true;
 }
