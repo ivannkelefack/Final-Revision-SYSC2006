@@ -42,7 +42,7 @@ bool isStackEmpty(const Stack *stack)
 void push(Stack *stack, int data)
 {
     assert(stack != NULL);
-    struct StackNode *newnode = malloc(sizeof(StackNode));
+    struct Node *newnode = malloc(sizeof(StackNode));
     assert(StackNode != NULL);
     newnode->data = data;
     newnode->next = stack->top;
