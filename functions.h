@@ -22,17 +22,25 @@ typedef struct {
     node_t *rear;
     int size;
     } Queue;
+
+//Define the structures for the hash table 
+typedef struct contact {
+    char *name;
+    char *addr;
+    struct contact *next;
+  } contact_t;
     
 // Function prototypes
-
-
-void initializeStack(Stack* stack);
-bool isStackEmpty(const Stack* stack);
-void push(Stack* stack, int data);
-_Bool pop(Stack* stack, int data);
-_Bool peek(Stack* stack, int* elem);
-void enqueue(queue_t *queue, int elem);
-_Bool front(queue_t *queue, int *elem);
-_Bool dequeue(queue_t *queue, int *elem);
+void initializeStack(Stack* stack); // Initialize the stack
+bool isStackEmpty(const Stack* stack); // Check if the stack is empty
+void push(Stack* stack, int data); // Push an element onto the stack
+_Bool pop(Stack* stack, int* elem); // Pop an element from the stack
+_Bool peek(Stack* stack, int* elem); // Peek at the top element of the stack
+void enqueue(queue_t *queue, int elem); // Enqueue an element into the queue
+_Bool front(queue_t *queue, int *elem); // Get the front element of the queue
+_Bool dequeue(queue_t *queue, int *elem); // Dequeue an element from the queue
+void insert(contact_t **head, const char *name, const char *addr); // Insert a contact
+char *lookup(contact_t *head, const char *name); // Lookup a contact
+void remove_contact(contact_t **head, const char *name); // Remove a contact
 
 #endif // FUNCTIONS_H

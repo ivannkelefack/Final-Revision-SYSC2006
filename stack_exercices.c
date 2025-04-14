@@ -8,7 +8,6 @@
 
 #include "functions.h"
 
-// Implement your stack-related functions here
 
 int main()
 {
@@ -20,7 +19,7 @@ int main()
 void initializeStack(Stack *stack)
 {
     struct Stack *stack = malloc(sizeof(Stack));
-    assert(Stack != NULL);
+    assert(stack != NULL);
 
     stack->top = NULL;
     stack->size = 0;
@@ -29,7 +28,7 @@ void initializeStack(Stack *stack)
 bool isStackEmpty(const Stack *stack)
 {
     struct Stack *stack = malloc(sizeof(Stack));
-    assert(Stack != NULL);
+    assert(stack != NULL);
 
     if (stack->size == 0 && stack->top == NULL)
     {
@@ -42,8 +41,8 @@ bool isStackEmpty(const Stack *stack)
 void push(Stack *stack, int data)
 {
     assert(stack != NULL);
-    struct Node *newnode = malloc(sizeof(StackNode));
-    assert(StackNode != NULL);
+    struct Node *newnode = malloc(sizeof(Node));
+    assert(newnode != NULL);
     newnode->data = data;
     newnode->next = stack->top;
     stack->top = newnode;
@@ -59,7 +58,7 @@ _Bool pop(Stack *stack, int *elem)
     }
 
     *elem = stack->top->data;
-    StackNode *to_remove = stack->top;
+    Node *to_remove = stack->top;
     stack->top = to_remove->next;
     free(to_remove);
     stack->size -= 1;
