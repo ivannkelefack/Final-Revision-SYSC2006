@@ -4,15 +4,15 @@
 #include <stdbool.h> // For boolean types
 #include <stddef.h>  // For size_t
 
-// Define the structure for a stack node
-typedef struct StackNode {
+// Define the structure for a node
+typedef struct Node {
     int data;                 // Data stored in the node
-    struct StackNode* next;   // Pointer to the next node
+    struct Stack* next;   // Pointer to the next node
 } Node;
 
 // Define the structure for the stack
 typedef struct Stack {
-    StackNode* top;           // Pointer to the top of the stack
+    Node* top;           // Pointer to the top of the stack
     size_t size;              // Number of elements in the stack
 } Stack;
 
